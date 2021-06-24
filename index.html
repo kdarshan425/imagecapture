@@ -1,0 +1,75 @@
+<html lang=”en”>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- Name of the app -->
+		<title>Camera App</title>
+
+		<!-- Link to main style sheet -->
+		<link rel="stylesheet" href="style.css"> 
+        <style>
+        
+        </style>
+	</head>
+	<body>
+
+		<!-- Camera -->
+		<div id="camera">
+
+		    <!-- Camera sensor -->
+		    <canvas id="camera--sensor"></canvas>
+		    
+		    <!-- Camera view -->
+		    <video id="camera--view" autoplay playsinline></video>
+            <center>
+                <img class="overlay" src="img/body.png" alt="">
+            </center>		    
+		    <!-- Camera output -->
+		    <img style="z-index: 50;" src="//:0" alt="" id="camera--output">
+
+		    <!-- Camera trigger -->
+		    <button style="z-index: 15;" id="camera--trigger">Take a picture</button>
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+				<div  style="padding-bottom: 40px;" class="modal-content" >
+                    <center>
+                        <button class="modal-content dlsubmit"  onclick="dlsubmit()">Submit</button>
+                    </center>                   
+                </div>      
+                <img class="modal-content" id="img01">
+                <div id="caption">abcdefg</div>
+				          
+            </div>
+
+		</div>
+
+		<!-- Reference to your JavaScript file -->
+		<script src="app.js"></script> 
+        <script>
+            // Get the modal
+            var modal = document.getElementById("myModal");
+            
+            // Get the image and insert it inside the modal - use its "alt" text as a caption
+            var img = document.getElementById("camera--output");
+            var modalImg = document.getElementById("img01");
+            var captionText = document.getElementById("caption");
+            img.onclick = function(){
+              modal.style.display = "block";
+              modalImg.src = this.src;
+              captionText.innerHTML = this.alt;
+            }
+            
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+            
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() { 
+              modal.style.display = "none";
+            }
+            </script>
+	</body>
+</html>
