@@ -63,7 +63,7 @@ UploadToS3= function(fileName){
     IdentityPoolId: IdentityPoolId,
   });
 
-  let file1 = filePath
+  let file1 = fileName,
   function addPhoto(file1) {
     
   var file = file1;
@@ -94,4 +94,5 @@ UploadToS3= function(fileName){
       }
     );
   }}
+  
   
